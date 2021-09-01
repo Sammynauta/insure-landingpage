@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    
+}
+
+header {
+    display: flex;
+    height: 60px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header nav ul {
+    display: flex;
+}
+header nav ul li  {
+    display: flex;
+    text-decoration: none;
+    margin: 5px;
+    color: hsl(216, 30%, 68%);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+header nav ul li:hover  {
+    color: hsl(270, 9%, 17%);
+}
+
+header nav ul li a {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    align-items: center;
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+    margin: 5px;
+}
+
+header nav .btn-menu {
+    background-color: white;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    justify-content: center;
+    border: 2px solid black;
+    cursor: pointer;
+    width: 150px;
+    transition: 0.3s ease;
+}
+header nav .btn-menu:hover {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    border: 2px solid white;
+}
+
+main {
+    display: flex;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    background-color:  #2d2640;
+    position: relative;
+}
+
+main article {
+    color: white;
+    width: 70%;
+}
+
+main h2 {
+    font-family: 'DM Serif Display', serif;
+}
+
+main article p {
+    color: white;
+    font-family: 'Karla', sans-serif;
+    font-weight: 400;
+    width: 80%;
+}
+
+main article button {
+    background: transparent;
+    padding: 8px;
+    width: 150px;
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+    border: none;
+    color: white;
+    border: 2px solid white;
+    transition: 0.4s ease;
+}
+
+main article button:hover {
+    background: white;
+    color: black;
+    border: 2px solid transparent;
+}
+
+main figure {
+    position: absolute;
+    right: 200px;
+    top: 40px;
+}
