@@ -5,6 +5,14 @@
     
 }
 
+:root {
+	--dark-violet: hsl(256, 26%, 20%);
+	--greyish-blue: hsl(216, 30%, 68%);
+	--very-dark-violet: hsl(270, 9%, 17%);
+	--dark-grayish-violet: hsl(273, 4%, 51%);
+	--very-light-gray: hsl(0, 0%, 98%);
+}
+
 header {
     display: flex;
     height: 60px;
@@ -19,12 +27,12 @@ header nav ul li  {
     display: flex;
     text-decoration: none;
     margin: 5px;
-    color: hsl(216, 30%, 68%);
+    color: var(--greyish-blue);
     cursor: pointer;
     transition: 0.3s ease;
 }
 header nav ul li:hover  {
-    color: hsl(270, 9%, 17%);
+    color: var(--very-dark-violet);
 }
 
 header nav ul li a {
@@ -38,31 +46,58 @@ header nav ul li a {
 }
 
 header nav .btn-menu {
-    background-color: white;
-    color: black;
+    background-color: var(--very-light-gray);
+    color: var(--dark-violet);
     padding: 5px;
     text-align: center;
     justify-content: center;
-    border: 2px solid black;
+    border: 2px solid var(--very-dark-violet);
     cursor: pointer;
     width: 150px;
     transition: 0.3s ease;
 }
 header nav .btn-menu:hover {
-    background-color: black;
-    color: white;
+    background-color: var(--very-dark-violet);
+    color: var(--very-light-gray);
     padding: 5px;
     text-align: center;
-    border: 2px solid white;
+    border: 2px solid var(--very-light-gray);
 }
 
 main {
     display: flex;
-    height: 400px;
+    height: 500px;
     justify-content: center;
     align-items: center;
-    background-color:  #2d2640;
+    background-color: var(--dark-violet);
     position: relative;
+}
+
+main::after {
+	content: '';
+	background-image: url('/images/bg-pattern-intro-right-desktop.svg');
+	background-repeat: no-repeat;
+	background-position: top right;
+    background-size: 350px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 50%;
+	z-index: 2;
+}
+
+main::before {
+	content: '';
+	background-image: url('/images/bg-pattern-intro-left-desktop.svg');
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	position: absolute;
+	bottom: -50%;
+	left: 0;
+	height: 100%;
+	width: 200px;
+	z-index: 0;
 }
 
 main article {
@@ -70,32 +105,40 @@ main article {
     width: 70%;
 }
 
-main h2 {
+main div {
+    width: 100px;
+    border: 1px solid white;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+main h1 {
     font-family: 'DM Serif Display', serif;
+    width: calc(80% / 3);
 }
 
 main article p {
-    color: white;
+    color: var(--dark-grayish-violet);
     font-family: 'Karla', sans-serif;
     font-weight: 400;
-    width: 80%;
+    width: calc(95% / 2);
 }
 
 main article button {
-    background: transparent;
+    background-color: transparent;
     padding: 8px;
     width: 150px;
     font-family: 'Karla', sans-serif;
     font-weight: 700;
     border: none;
-    color: white;
-    border: 2px solid white;
-    transition: 0.4s ease;
+    color: var(--very-light-gray);
+    border: 2px solid var(--very-light-gray);
+    transition: 0.3s ease;
 }
 
 main article button:hover {
-    background: white;
-    color: black;
+    background-color: var(--very-light-gray);
+    color: var(--very-dark-violet);
     border: 2px solid transparent;
 }
 
@@ -103,4 +146,154 @@ main figure {
     position: absolute;
     right: 200px;
     top: 40px;
+}
+
+section {
+    padding: 0 20px;
+	margin: 200px auto 0 auto;
+	max-width: 100%;
+    width: 1200px;
+}
+
+section h2 {
+    margin-bottom: 60px;
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
+}
+section .line-top {
+    width: 100px;
+    border: 1px solid rgb(134, 134, 134);
+    margin-bottom: 20px;
+    background-color: rgb(165, 165, 165);
+}
+
+section article {
+    display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+section  article .c01, .c02, .c03 {
+    display: block;
+}
+
+section span {
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+section article p {
+    font-family: 'Karla', serif;
+    font-weight: 400;
+    color: var(--dark-grayish-violet)
+}
+
+.container {
+    padding: 0 20px;
+	margin: 0 auto;
+	max-width: 100%;
+	width: 1200px;
+    display: flex;
+}
+
+.flex {
+    display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.bg-violet {
+	background-color: var(--dark-violet);
+	background-image: url('/images/bg-pattern-how-we-work-desktop.svg');
+	background-repeat: no-repeat;
+	background-position: top right;
+	background-size: 50% 100%;
+	padding: 70px;
+	margin: 100px auto;
+    
+}
+
+.bg-violet h2 {
+	color: #fff;
+	font-size: 3em;
+	padding: 0;
+	width: 60%;
+}
+
+.btn-bg {
+	background-color: transparent;
+	border: 2px solid #fff;
+	display: inline-block;
+	color: #fff;
+	cursor: pointer;
+	padding: 15px 25px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-bg:hover {
+    background-color: var(--very-light-gray);
+    color: var(--very-dark-violet);
+    border: 2px solid transparent;
+}
+
+footer {
+	background-color: var(--very-light-gray);
+	background-image: url('/images/bg-pattern-footer-desktop.svg');
+	background-repeat: no-repeat;
+	background-position: top left;
+	padding: 60px 0 30px;
+    
+}
+
+footer .container-footer {
+        padding: 0 20px;
+        margin: 0 auto;
+        max-width: 100%;
+        width: 1200px; 
+}
+
+footer h4 {
+	color: var(--dark-grayish-violet);
+	text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+footer ul {
+	padding: 0;
+	list-style-type: none;
+}
+
+footer ul .flex li:nth-last-child(1) {
+	margin-left: 15px;
+}
+
+footer li a i {
+	color: var(--dark-grayish-violet);
+	text-transform: uppercase;
+	text-decoration: none;
+    margin: 0 5px;
+    font-size: 24px;
+}
+
+footer li a i:hover {
+	color: var(--very-dark-violet);
+}
+
+footer .text-footer li a {
+	color: var(--dark-violet);
+	text-transform: uppercase;
+	text-decoration: none;
+    font-size: 18px;
+    font-family: 'Karla', sans-serif;
+}
+
+footer .text-footer li a:hover {
+	text-decoration: underline;
+}
+
+.border-bottom {
+	border-bottom: 1px solid var(--greyish-blue);
+	margin-bottom: 30px;
 }
