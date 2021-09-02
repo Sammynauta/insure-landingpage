@@ -2,7 +2,6 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    
 }
 
 :root {
@@ -16,52 +15,72 @@
 header {
     display: flex;
     height: 60px;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+}
+header nav {
+	background-color: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	z-index: 100;
+}
+
+header nav .container .flex {
+    display: flex;
+    width: 100%;
+}
+
+header nav .hamburger {
+	display: none;
+}
+
+header nav .hamburger:focus {
+	outline: none;
 }
 
 header nav ul {
-    display: flex;
-}
-header nav ul li  {
-    display: flex;
-    text-decoration: none;
-    margin: 5px;
-    color: var(--greyish-blue);
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-header nav ul li:hover  {
-    color: var(--very-dark-violet);
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+	padding: 0;
+    margin-top: 5px;
 }
 
-header nav ul li a {
-    display: flex;
-    text-decoration: none;
-    list-style: none;
-    align-items: center;
+header nav li {
+	margin-left: 30px;
+}
+
+header nav li a {
+	color: var(--dark-grayish-violet);
+	text-transform: uppercase;
+	text-decoration: none;
+    font-weight: 700;
+}
+header nav li a:hover {
+	color: var(--dark-violet);
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+.btn-reverse {
+    background-color: transparent;
+	border: 2px solid var(--very-dark-violet);
+	display: flex;
+	color: var(--very-dark-violet);
+	cursor: pointer;
+	padding: 5px 10px;
+	text-transform: uppercase;
     font-family: 'Karla', sans-serif;
     font-weight: 700;
-    margin: 5px;
+    transition: 0.3s ease-in-out;
 }
-
-header nav .btn-menu {
-    background-color: var(--very-light-gray);
-    color: var(--dark-violet);
-    padding: 5px;
-    text-align: center;
-    justify-content: center;
-    border: 2px solid var(--very-dark-violet);
-    cursor: pointer;
-    width: 150px;
-    transition: 0.3s ease;
-}
-header nav .btn-menu:hover {
+.btn-reverse:hover {
     background-color: var(--very-dark-violet);
-    color: var(--very-light-gray);
-    padding: 5px;
-    text-align: center;
-    border: 2px solid var(--very-light-gray);
+	border: 2px solid var(--very-dark-violet);
+	display: inline-block;
+	color: var(--very-light-gray);
 }
 
 main {
@@ -71,6 +90,7 @@ main {
     align-items: center;
     background-color: var(--dark-violet);
     position: relative;
+    width: 100%;
 }
 
 main::after {
@@ -144,13 +164,17 @@ main article button:hover {
 
 main figure {
     position: absolute;
-    right: 200px;
+    right: 100px;
     top: 40px;
+    background-image: url(/images/image-intro-desktop.jpg);
+    background-size: cover;
+    width: 500px;
+    height: 500px;
 }
 
 section {
     padding: 0 20px;
-	margin: 200px auto 0 auto;
+	margin: 100px auto 0 auto;
 	max-width: 100%;
     width: 1200px;
 }
@@ -296,4 +320,156 @@ footer .text-footer li a:hover {
 .border-bottom {
 	border-bottom: 1px solid var(--greyish-blue);
 	margin-bottom: 30px;
+}
+
+@media screen and (max-width: 992px) {
+    header nav {
+		padding: 20px 0;
+	}
+
+	header nav .hamburger {
+		background-color: transparent;
+		border: 0;
+		cursor: pointer;
+		display: flex;
+	}
+
+	header nav .hamburger .close {
+		display: none;
+	}
+
+	header nav .hamburger.show .open {
+		display: none;
+	}
+
+	header nav .hamburger.show .close {
+		display: block;
+	}
+
+	header nav .flex {
+		flex-direction: row;
+        justify-content: space-around;
+	}
+
+	header nav .img-wrapper {
+		text-align: left;
+	}
+
+	header nav ul {
+		display: none;
+	}
+
+	header nav ul.show {
+        background-image: url(/images/bg-pattern-mobile-nav.svg);
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: contain;
+		background-color: var(--very-dark-violet);
+		display: flex;
+		flex-direction: column;
+		position: fixed;
+		padding-top: 30px;
+		margin: 0;
+		top: 70px;
+		left: 0;
+		width: 100vw;
+		height: calc(100vh - 70px);
+		z-index: 100;
+	}
+
+	header nav ul li {
+		margin: 20px 0;
+	}
+
+	header nav ul a {
+		color: #fff;
+	}
+
+	.btn-reverse {
+		border-color: #fff;
+		color: #fff;
+	}
+    main {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        height: auto;
+    }
+    main figure {
+        position: relative;
+        top: 10px;
+        right: 0;
+        background-image: url(/images/image-intro-desktop.jpg);
+        background-size: cover;
+        width: 100vw;
+        height: 700px;
+    }
+    main::after{
+        display: none;
+    }
+    main::before{
+        display: none;
+    }
+    main article {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    main h1 {
+        font-family: 'DM Serif Display', serif;
+        width: calc(80% / 2);
+    }
+    main article div {
+        display: none;
+    }
+    main article p {
+        color: var(--dark-grayish-violet);
+        font-family: 'Karla', sans-serif;
+        font-weight: 400;
+    }
+    main article button {
+        margin-bottom: 15px;
+    }
+    #s01 h2 {
+        text-align: center;
+    }
+    #s01 .line-top {
+        display: none;
+    }
+    section article {
+        flex-direction: column;
+        text-align: center;
+    }
+    .bg-violet {
+        background-image: url(/images/bg-pattern-how-we-work-mobile.svg);
+    }
+    .bg-violet .flex {
+        flex-direction: column;
+    }
+    .bg-violet .flex div{
+       text-align: center;
+       display: flex;
+       justify-content: center;
+    }
+    footer {
+		background-image: url(/images/bg-pattern-footer-mobile.svg);
+		background-size: 100% auto;
+		background-position: top center;
+	}
+    .border-bottom {
+        display: flex;
+        flex-direction: column;
+    }
+    .align-start {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    #footer-logo {
+        margin-bottom: 30px;
+    }
 }
